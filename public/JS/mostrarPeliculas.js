@@ -23,7 +23,7 @@ async function mostrarPeliculas() {
 function crearMostrar(pelicula) {
     const tituloPelicula = document.createElement("p")
     tituloPelicula.textContent = pelicula.tituloPelicula
-    tituloPelicula.classList = "mostrarDato"
+    tituloPelicula.classList.add("mostrarDato")
 
     const posterPelicula = document.createElement("img")
     posterPelicula.src = pelicula.posterUrl
@@ -31,22 +31,26 @@ function crearMostrar(pelicula) {
 
     const generosPelicula = document.createElement("p")
     generosPelicula.textContent = pelicula.generos
-    generosPelicula.classList = "mostrarDato"
+    generosPelicula.classList.add("mostrarDato")
 
     const anioPelicula = document.createElement("p")
     anioPelicula.textContent = pelicula.anio
-    anioPelicula.classList = "mostrarDato"
+    anioPelicula.classList.add("mostrarDato")
 
     const divContenedor = document.createElement("div")
-    divContenedor.classList = "pelicula"
+    divContenedor.classList.add("informacion")
+    
+    const divContenedorInfo = document.createElement("div")
+    divContenedor.classList.add("pelicula")
 
     divContenedor.appendChild(tituloPelicula)
-    divContenedor.appendChild(posterPelicula)
     divContenedor.appendChild(generosPelicula)
     divContenedor.appendChild(anioPelicula)
+    divContenedorInfo.appendChild(posterPelicula)
+    divContenedorInfo.appendChild(divContenedor)
 
 
-    contenedorPeliculas.prepend(divContenedor)
+    contenedorPeliculas.prepend(divContenedorInfo)
 }
 
 export{ mostrarPeliculas}

@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    margin-left: -5%;
+    padding-top: 2%;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+    margin: 0 auto
+}
+
+/* Contenedor general de cada película */
+.pelicula {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Información textual oculta por defecto */
+.informacion {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo semitransparente opcional */
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Mostrar la información al hacer hover sobre el contenedor */
+.pelicula:hover .informacion {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Imagen visible siempre */
+.img {
+    width: 10%;
+    height: auto;
+    display: block;
+}

@@ -1,5 +1,6 @@
 //Importaciones
 import { createMovie } from "../services/crudPeliculas.js"
+import { mostrarPeliculas } from "./mostrarPeliculas.js"
 //Datos globales
 const titulo =          document.getElementById("titulo")
 const poster =          document.getElementById("poster")
@@ -12,7 +13,7 @@ document.getElementById("agregarPelicula"). addEventListener("click", validacion
 
 function validacionCrear(){
 
-    if(titulo != "", poster != "", genero != "", anioLanzamiento != ""){
+    if(titulo.value != "", poster.value != "", genero.value != "", anioLanzamiento.value != ""){
 
         const nuevaPelicula = {
             tituloPelicula: titulo.value,
@@ -20,7 +21,16 @@ function validacionCrear(){
             generos: genero.value + ", " + genero2.value,
             anio: anioLanzamiento.value
         }
+        limpiarInputs()
         createMovie(nuevaPelicula)
         
     }
+}
+
+function limpiarInputs(){
+    titulo.value = ""
+    poster.value = ""
+    genero.value = ""
+    genero2.value = ""
+    anioLanzamiento.value = ""
 }
