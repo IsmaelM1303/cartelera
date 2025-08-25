@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+</head>
+<body>
+    <header>
+        <h1>Agregar películas</h1>
+        <ul>
+            <a href="/">
+                <li>Ver películas</li>
+            </a>
+            <a href="#">
+                <li>Agregar películas</li>
+            </a>
+        </ul>
+    </header>
+    <main>
+        <div id="contenedorFormulario">
+            <div id="contenedorInformacion">
+                <label>Nombre de la película</label>
+                <input type="text" name="titulo" placeholder="Título" id="titulo">
+    
+                <label>Link del póster</label>
+                <input type="url" name="poster" placeholder="URL de la imagen" id="poster">
+    
+                <label>Género de la película</label>
+                <input type="text" name="genero" placeholder="Genero principal" id="genero">
+    
+                <label>Género secundario</label>
+                <input type="text" name="genero2" placeholder="Genero secundario" id="genero2">
+
+                <label>Año de lanzamiento</label>
+                <input type="number" id="anioLanzamiento">
+            </div>
+            <button id="agregarPelicula">Agregar película</button>
+        </div>
+    </main>
+    <script type="module" src="../JS/agregarPelicula.js"></script>
+</body>
+</html>
