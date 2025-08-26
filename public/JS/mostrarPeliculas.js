@@ -1,10 +1,7 @@
-//Importaciones
 import { getMovie } from "../services/crudPeliculas.js"
 
-//Datos globales
 const contenedorPeliculas = document.getElementById("contenedorPeliculas")
 
-// Mostrar peliculas en el DOM
 async function mostrarPeliculas() {
     try {
         contenedorPeliculas.innerHTML = ""
@@ -19,15 +16,10 @@ async function mostrarPeliculas() {
     }
 }
 
-// Crear y mostrar una pelicula individual
 function crearMostrar(pelicula) {
     const tituloPelicula = document.createElement("p")
     tituloPelicula.textContent = pelicula.tituloPelicula
     tituloPelicula.classList.add("mostrarDato")
-
-    const posterPelicula = document.createElement("img")
-    posterPelicula.src = pelicula.posterUrl
-    posterPelicula.classList.add("mostrarDato", "img")
 
     const generosPelicula = document.createElement("p")
     generosPelicula.textContent = pelicula.generos
@@ -37,20 +29,28 @@ function crearMostrar(pelicula) {
     anioPelicula.textContent = pelicula.anio
     anioPelicula.classList.add("mostrarDato")
 
-    const divContenedor = document.createElement("div")
-    divContenedor.classList.add("informacion")
-    
-    const divContenedorInfo = document.createElement("div")
-    divContenedor.classList.add("pelicula")
+    const divInformacion = document.createElement("div")
+    divInformacion.classList.add("informacion")
+    divInformacion.appendChild(tituloPelicula)
+    divInformacion.appendChild(generosPelicula)
+    divInformacion.appendChild(anioPelicula)
 
-    divContenedor.appendChild(tituloPelicula)
-    divContenedor.appendChild(generosPelicula)
-    divContenedor.appendChild(anioPelicula)
-    divContenedorInfo.appendChild(posterPelicula)
-    divContenedorInfo.appendChild(divContenedor)
+    const posterPelicula = document.createElement("img")
+    posterPelicula.src = pelicula.posterUrl
+    posterPelicula.classList.add("img")
 
+    const divTarjeta = document.createElement("div")
+    divTarjeta.classList.add("pelicula")
+    divTarjeta.appendChild(posterPelicula)
+    divTarjeta.appendChild(divInformacion)
 
-    contenedorPeliculas.prepend(divContenedorInfo)
+    contenedorPeliculas.appendChild(divTarjeta)
+
+    const totalTarjetas = contenedorPeliculas.children.length
+    const columnas = Math.floor(contenedorPeliculas.offsetWidth / 150)
+    if (totalTarjetas % columnas === 0) {
+        divTarjeta.classList.add("fin-de-fila")
+    }
 }
 
-export{ mostrarPeliculas}
+export { mostrarPeliculas }

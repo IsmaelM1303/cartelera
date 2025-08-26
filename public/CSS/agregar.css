@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cinzel', serif;
+}
+
+body {
+    background-color: #3B382C;
+    color: #B28927;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to bottom, #DE0700, #960500);
+    color: #d89e16;
+    padding: 2vh 5vw;
+    text-align: center;
+    border-bottom: 4px solid #B28927;
+}
+
+header h1 {
+    font-size: 7vh;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px #bb860b, 0 0 16px #b17f0c;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vh;
+}
+
+header li {
+    flex: 1;
+    text-align: center;
+    font-size: 3vh;
+}
+
+header a {
+    font-size: 2.5vh;
+    color: #c28c0e;
+    text-decoration: none;
+    text-shadow: 0 0 6px #c7b670, 0 0 12px #c7ab3a;
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+header a:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+}
+
+/* Formulario */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 0;
+}
+
+#contenedorFormulario {
+    background: linear-gradient(to bottom, #DE0700, #960500);
+    border: 3px solid #B28927;
+    border-radius: 12px;
+    padding: 3vh 4vw;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(178, 137, 39, 0.4);
+}
+
+#contenedorInformacion {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+label {
+    font-size: 2.2vh;
+    color: #B28927;
+    text-shadow: 0 0 6px #3B382C;
+}
+
+input,
+select {
+    background-color: #3B382C;
+    color: #B28927;
+    border: 1px solid #B28927;
+    border-radius: 6px;
+    padding: 1vh 1vw;
+    font-size: 2vh;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+    outline: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+input::placeholder {
+    color: #B28927;
+    opacity: 0.6;
+}
+
+select:hover,
+select:focus {
+    background-color: #960500;
+    color: #B28927;
+}
+
+select option {
+    background-color: #3B382C;
+    color: #B28927;
+}
+
+select option:checked {
+    background-color: #960500;
+    color: #B28927;
+}
+
+/* Botón */
+#agregarPelicula {
+    margin-top: 3vh;
+    padding: 1vh 2vw;
+    font-size: 2.2vh;
+    font-weight: bold;
+    background-color: #B28927;
+    color: #3B382C;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#agregarPelicula:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #FFD700;
+}
