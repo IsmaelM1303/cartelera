@@ -13,7 +13,7 @@ document.getElementById("agregarPelicula"). addEventListener("click", validacion
 
 function validacionCrear(){
 
-    if(titulo.value != "", poster.value != "", genero.value != "", anioLanzamiento.value != ""){
+    if(titulo.value != "", poster.value != "", genero.value != "", anioLanzamiento.value != "", anioLanzamiento>=1930 && anioLanzamiento< 2099){
 
         const nuevaPelicula = {
             tituloPelicula: titulo.value,
